@@ -1,0 +1,6 @@
+# Fork server
+
+main process      : making fork request !        e.g. prime_distributor  
+the first process : fork() handler      !        e.g. solver
+other             : execute the main program     e.g. solver
+
