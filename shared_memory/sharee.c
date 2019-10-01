@@ -22,7 +22,10 @@ main(int argc, char** argv) {
     if ( msg == (void*) -1 ) fatal("shmat() failure") ;
     printf("msg address : %p\n", msg) ;
 
-
+    msg = shmat(shm_id, NULL, 0) ;
+    if ( msg == (void*) -1 ) fatal("shmat() failure") ;
+    printf("msg address : %p\n", msg) ;
+    
     strcpy(msg, buf) ;
     puts("String has been copied") ;
     puts(msg) ;
