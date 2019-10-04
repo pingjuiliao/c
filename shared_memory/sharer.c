@@ -14,8 +14,10 @@ main(int argc ,char** argv) {
     // shm
     shm_id = shmget(IPC_PRIVATE, BUF_SIZE, IPC_CREAT|IPC_EXCL|0600) ;
     if ( shm_id < 0 ) fatal("shmget() failure") ;
+    
     msg = shmat(shm_id, NULL, 0) ;
     if ( !msg ) fatal("shmat(), failure");
+    
     printf("My shm_id is %d\n", shm_id) ;
     
     // init
